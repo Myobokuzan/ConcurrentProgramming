@@ -15,7 +15,6 @@ public class Tarea2 extends Thread{
         this.r=r;
     }
     public void run(){
-        this.r.setRecurso(this.r.getRecurso()*2);
-        System.out.println("hola");
+        this.r.multPorDos();
     }
 }

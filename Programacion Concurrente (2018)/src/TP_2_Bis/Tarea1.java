@@ -15,6 +15,6 @@ public class Tarea1 extends Thread{
         this.r=r;
     }
     public void run(){
-        this.r.setRecurso(this.r.getRecurso()+1);
+        this.r.aumentar();
     }
 }

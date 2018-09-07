@@ -10,12 +10,13 @@ package TP_2_Bis;
  * @author Tomas
  */
 public class TestTareas {
-    public static void main(String[]args){
+    public static void main(String[]args) throws InterruptedException{
         Recurso r=new Recurso(3);
+        
         Tarea1 t1=new Tarea1(r);
         Tarea2 t2=new Tarea2(r);
-        //t1.start();
         t2.start();
-        System.out.println(r.getRecurso());
+        //t2.join();
+        t1.start();
     }
 }

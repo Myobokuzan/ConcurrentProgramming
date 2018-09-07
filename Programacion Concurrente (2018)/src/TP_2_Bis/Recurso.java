@@ -5,19 +5,29 @@
  */
 package TP_2_Bis;
 
+import java.util.concurrent.Semaphore;
+
 /**
  *
  * @author Tomas
  */
 public class Recurso {
     private int r;
+    private Semaphore mutex;
     Recurso(int r){
         this.r=r;
+        this.mutex=new Semaphore(1,true);
     }
-    synchronized void setRecurso(int r){
-        this.r=r;
+    public void aumentar() throws InterruptedException{
+        mutex.acquire();
+        this.r++;
+        System.out.println(this.r);
+        mutex.release();
     }
-    synchronized int getRecurso(){
-        return this.r;
+    public void multPorDos() throws InterruptedException{
+        mutex.acquire();
+        this.r=this.r*2;
+        System.out.println(this.r);
+        mutex.release();
     }
 }
