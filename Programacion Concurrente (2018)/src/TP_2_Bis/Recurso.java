@@ -16,18 +16,13 @@ public class Recurso {
     private Semaphore mutex;
     Recurso(int r){
         this.r=r;
-        this.mutex=new Semaphore(1,true);
     }
-    public void aumentar() throws InterruptedException{
-        mutex.acquire();
+    public synchronized void aumentar(){
         this.r++;
         System.out.println(this.r);
-        mutex.release();
     }
-    public void multPorDos() throws InterruptedException{
-        mutex.acquire();
+    public synchronized void multPorDos(){
         this.r=this.r*2;
         System.out.println(this.r);
-        mutex.release();
     }
 }

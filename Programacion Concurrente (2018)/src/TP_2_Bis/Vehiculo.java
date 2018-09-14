@@ -11,14 +11,12 @@ package TP_2_Bis;
  */
 public class Vehiculo {
     private String patente;
-    private String modelo;
-    private String marca;
     protected int kmParaEstacion;
-    public Vehiculo(String pat,String mod,String marca,int km){
+    protected Reserva r;
+    public Vehiculo(String pat,int km,Reserva r){
         this.patente=pat;
-        this.modelo=mod;
-        this.marca=marca;
         this.kmParaEstacion=km;
+        this.r=r;
     }
     public int getKmEstacion(){
         return this.kmParaEstacion;
