@@ -33,17 +33,14 @@ public class TramoCompartido {
     
     public void entrar(int tramo){
         llave.lock();
-        if(tramo==1){
-            this.esperaT1++;
-        }else{
-            this.esperaT2++;
-        }
         while(!this.viaLibre){
             try{
                 if(tramo==1){
+                    this.esperaT1++;
                     this.colaTramo1.await();
                     System.out.println(tramo+" se puso en espera");
                 }else{
+                    this.esperaT2++;
                     this.colaTramo2.await();
                     System.out.println(tramo+" se puso en espera");
                 }
@@ -57,11 +54,11 @@ public class TramoCompartido {
     public void salir(int tramo){
         llave.lock();
         this.viaLibre=true;
-        if(tramo==1&&this.esperaT2>0){
+        if(tramo==1&&this.esperaT2>0||tramo==2&&this.esperaT1<=0){
             this.esperaT1--;
             this.colaTramo2.signal();
         }else{
-            if(tramo==2&&this.esperaT1>0){
+            if(tramo==2&&this.esperaT1>0||tramo==1&&this.esperaT2<=0){
                 this.esperaT2--;
                 this.colaTramo1.signal();
             }
