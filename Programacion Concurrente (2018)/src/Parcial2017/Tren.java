@@ -19,8 +19,14 @@ public class Tren implements Runnable{
     }
     
     public void run(){
-        this.via.entrar(this.tramo);
-        try{Thread.sleep(2000);}catch(InterruptedException e){}
-        this.via.salir(this.tramo);{}
+        if(this.tramo==1){
+            this.via.entrarTramo1();
+            try{Thread.sleep(5000);}catch(InterruptedException e){}
+            this.via.salirTramo1();
+        }else{
+            this.via.entrarTramo2();
+            try{Thread.sleep(5000);}catch(InterruptedException e){}
+            this.via.salirTramo2();
+        }
     }
 }

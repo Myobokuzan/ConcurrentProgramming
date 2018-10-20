@@ -13,11 +13,11 @@ public class Ejercicio1 {
     public static void main(String [] args){
         TramoCompartido viaCompartida=new TramoCompartido();
         Tren tren1=new Tren(2,viaCompartida);
-        Tren tren2=new Tren(1,viaCompartida);
+        Tren tren2=new Tren(2,viaCompartida);
         Tren tren3=new Tren(2,viaCompartida);
         Tren tren4=new Tren(2,viaCompartida);
         Tren tren5=new Tren(2,viaCompartida);
-        Tren tren6=new Tren(1,viaCompartida);
+        Tren tren6=new Tren(2,viaCompartida);
         
         Thread t1=new Thread(tren1);
         Thread t2=new Thread(tren2);
