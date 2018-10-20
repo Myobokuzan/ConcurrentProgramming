@@ -12,7 +12,6 @@ public class TramoCompartido {
     private Semaphore sem1;
     private Semaphore sem2;
     private Semaphore mutex;
-    //private Semaphore mutex2;
     private int cantT1;
     private int cantT2;
     private boolean primero; //Variable que controla la entrada del primer tren de una tanda
@@ -21,19 +20,10 @@ public class TramoCompartido {
         this.sem1=new Semaphore(0,true);
         this.sem2=new Semaphore(0,true);
         this.mutex=new Semaphore(1,true);
-        //this.mutex2=new Semaphore(1,true);
         this.cantT1=0;
         this.cantT2=0;
         this.primero=true;
     }
-    
-    /*public int getCantT1(){
-        int cant;
-        try{this.mutex2.acquire();}catch(InterruptedException e){}
-        cant=this.cantT1;
-        this.mutex2.release();
-        return cant;
-    }*/
     
     public void entrarTramo1(){
         try{this.mutex.acquire();}catch(InterruptedException e){}
