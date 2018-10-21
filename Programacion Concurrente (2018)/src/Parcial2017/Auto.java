@@ -10,9 +10,9 @@ package Parcial2017;
  * @author Tomas
  */
 public class Auto implements Runnable{
-    private Espacio espacio;
+    private EspacioConLocks espacio;
     
-    Auto(Espacio esp){
+    Auto(EspacioConLocks esp){
         this.espacio=esp;
     }
     

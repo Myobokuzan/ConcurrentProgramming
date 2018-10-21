@@ -13,9 +13,9 @@ import java.util.logging.Logger;
  * @author Tomas
  */
 public class Transbordador implements Runnable{
-    private Espacio espacio;
+    private EspacioConLocks espacio;
     
-    Transbordador(Espacio esp){
+    Transbordador(EspacioConLocks esp){
         this.espacio=esp;
     }
     

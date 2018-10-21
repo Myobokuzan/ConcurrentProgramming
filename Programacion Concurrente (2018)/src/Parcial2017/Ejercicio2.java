@@ -11,7 +11,7 @@ package Parcial2017;
  */
 public class Ejercicio2 {
     public static void main(String[]args){
-        Espacio esp=new Espacio();
+        EspacioConLocks esp=new EspacioConLocks();
         Transbordador t=new Transbordador(esp);
         Auto[] colAutos=new Auto[50];
         for(int i=0;i<colAutos.length;i++){
