@@ -14,7 +14,7 @@ public class TramoCompartido {
     private Semaphore mutex;
     private int cantT1;
     private int cantT2;
-    private boolean primero; //Variable que controla la entrada del primer tren de una tanda
+    private boolean primero; //Variable que controla de que tramo entrará el primer tren de una tanda
     
     TramoCompartido(){
         this.sem1=new Semaphore(0,true);
